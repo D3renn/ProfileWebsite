@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-8">
@@ -10,26 +12,26 @@ export default function Home() {
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-          <div className="p-6 border rounded-lg hover:shadow-lg transition-shadow">
+          <Link href="/about" className="p-6 border rounded-lg hover:shadow-lg transition-shadow">
             <h2 className="text-2xl font-semibold mb-3">About</h2>
             <p className="text-gray-600 dark:text-gray-400">
               Learn more about my background and skills
             </p>
-          </div>
+          </Link>
           
-          <div className="p-6 border rounded-lg hover:shadow-lg transition-shadow">
+          <Link href="/projects" className="p-6 border rounded-lg hover:shadow-lg transition-shadow">
             <h2 className="text-2xl font-semibold mb-3">Projects</h2>
             <p className="text-gray-600 dark:text-gray-400">
               Explore my latest work and creations
             </p>
-          </div>
+          </Link>
           
-          <div className="p-6 border rounded-lg hover:shadow-lg transition-shadow">
+          <Link href="/contact" className="p-6 border rounded-lg hover:shadow-lg transition-shadow">
             <h2 className="text-2xl font-semibold mb-3">Contact</h2>
             <p className="text-gray-600 dark:text-gray-400">
               Get in touch for collaborations
             </p>
-          </div>
+          </Link>
         </div>
       </div>
     </main>
