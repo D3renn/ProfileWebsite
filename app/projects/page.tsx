@@ -48,7 +48,7 @@ export default function ProjectsPage() {
           </Link>
 
           <h1 className="text-5xl md:text-6xl font-medium font-serif mb-4">Projects</h1>
-          <p className="text-lg text-neutral-500 mb-14">A selection of things I've built.</p>
+          <p className="text-lg text-neutral-500 mb-14">A selection of things I&apos;ve built.</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
