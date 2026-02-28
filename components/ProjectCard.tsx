@@ -5,67 +5,62 @@ interface ProjectCardProps {
   title: string;
   description: string;
   href: string;
-  image?: string | null;
+  techStack?: string[];
   comingSoon?: boolean;
 }
 
-export default function ProjectCard({ 
-  category, 
-  title, 
-  description, 
-  href, 
-  image,
-  comingSoon = false 
+export default function ProjectCard({
+  category,
+  title,
+  description,
+  href,
+  techStack = [],
+  comingSoon = false,
 }: ProjectCardProps) {
-  const CardContent = () => (
-    <>
-      <div className="mb-4">
-        <span className="text-xs font-semibold tracking-wider text-gray-500 dark:text-gray-400 uppercase">
-          {category}
-        </span>
-      </div>
-      
-      <h3 className="text-2xl md:text-3xl font-bold mb-4">
+  const inner = (
+    <div className="flex flex-col gap-3 px-7 pt-7 pb-6 h-full">
+      <span className="text-xs font-bold tracking-widest uppercase text-neutral-400">
+        {category}
+      </span>
+
+      <h3 className="text-2xl font-bold text-black leading-snug">
         {title}
         {comingSoon && (
-          <span className="ml-3 text-sm font-normal text-gray-500 dark:text-gray-400">
-            (Coming Soon)
-          </span>
+          <span className="ml-3 text-sm font-normal text-neutral-400">(Coming Soon)</span>
         )}
       </h3>
-      
-      <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-        {description}
-      </p>
-    </>
+
+      <p className="text-neutral-500 text-sm leading-relaxed line-clamp-2">{description}</p>
+
+      {techStack.length > 0 && (
+        <div className="flex flex-wrap gap-2 mt-1">
+          {techStack.map((tech) => (
+            <span
+              key={tech}
+              className="px-3 py-1 rounded-full text-xs font-medium bg-neutral-100 text-neutral-600"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
   );
 
   if (comingSoon) {
     return (
-      <div className="block p-8 md:p-10 border-2 border-gray-200 dark:border-gray-700 rounded-2xl bg-white dark:bg-gray-800/50 opacity-75 cursor-not-allowed">
-        <CardContent />
+      <div className="bg-white border border-neutral-200 rounded-[20px] shadow-sm opacity-60 cursor-not-allowed">
+        {inner}
       </div>
     );
   }
 
   return (
-    <Link 
+    <Link
       href={href}
-      className="block p-8 md:p-10 border-2 border-gray-200 dark:border-gray-700 rounded-2xl hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300 hover:shadow-xl bg-white dark:bg-gray-800/50 group"
+      className="block bg-white border border-neutral-200 rounded-[20px] shadow-sm hover:shadow-md hover:scale-[1.015] transition-all duration-200 h-full"
     >
-      <CardContent />
-      
-      <div className="mt-6 flex items-center text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors">
-        <span className="font-semibold">View Case Study</span>
-        <svg 
-          className="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </div>
+      {inner}
     </Link>
   );
 }

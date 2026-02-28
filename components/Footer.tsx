@@ -8,11 +8,11 @@ export default function Footer() {
           href="mailto:your.email@example.com" 
           className="text-lg font-semibold hover:text-gray-600 dark:hover:text-gray-400 transition-colors inline-block mb-4"
         >
-          your.email@example.com
+          dylanloh20@gmail.com
         </a>
         
         <p className="text-gray-600 dark:text-gray-400">
-          © {currentYear} Your Name
+          © {currentYear} Dylan Loh
         </p>
       </div>
     </footer>

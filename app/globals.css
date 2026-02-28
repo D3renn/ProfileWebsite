@@ -3,15 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f9f9f9;
+  --foreground: #000000;
+  --primary: #fdf6e3;
+  --secondary: #f9f9f9;
 }
 
 body {
@@ -29,22 +24,70 @@ body {
 /* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - minimal and clean */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
+  background: #ececec;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #d0d0d0;
 }
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d0d0d0 transparent;
+}
+
+/* Profile image entrance animation (on wrapper only) */
+@keyframes profileEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Wrapper handles entrance — keeps profile-img free for hover */
+.profile-img-wrapper {
+  display: inline-block;
+  animation: profileEntrance 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.profile-img {
+  border-radius: 28%;
+  transform: rotate(8deg);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.profile-img:hover {
+  transform: rotate(-12deg);
+}
+
+@keyframes arrowBounce {
+  50%, 100% { transform: translateY(0); opacity: 1; }
+  50%       { transform: translateY(10px); opacity: 0.8; }
+}
+
+.scroll-arrow {
+  animation: arrowBounce 2.5s ease-in-out infinite;
+}
+
