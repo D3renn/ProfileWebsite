@@ -65,7 +65,7 @@ export default function Home() {
                   />
                 </span>
               </span>
-              <span>I'm Dylan!</span>
+              <span>I&apos;m Dylan!</span>
             </h1>
             <p className="text-xl md:text-2xl text-neutral-700 leading-relaxed max-w-3xl mx-auto">
                 Full-stack developer crafting user-centered products that solve real business problems.
@@ -113,20 +113,20 @@ export default function Home() {
                   <p>
                     My journey into development has been shaped by my passion for problem-solving, 
                     creating elegant solutions, and building products that help people. Whether working 
-                    on a complex backend system or crafting pixel-perfect interfaces, I've consistently 
+                    on a complex backend system or crafting pixel-perfect interfaces, I&apos;ve consistently 
                     approached my work with a user-centered mindset.
                   </p>
                   
                   <p>
                     What excites me about full-stack development is the opportunity to create complete, 
                     intuitive solutions that empower people. I believe great software is more than just 
-                    clean code—it's about crafting thoughtful experiences that truly serve the needs of 
+                    clean code—it&apos;s about crafting thoughtful experiences that truly serve the needs of 
                     the people who use them.
                   </p>
                   
                   <p>
                     My diverse background in both frontend and backend technologies provides a unique 
-                    perspective on creating impactful, scalable solutions. I'm eager to learn, grow, 
+                    perspective on creating impactful, scalable solutions. I&apos;m eager to learn, grow, 
                     and collaborate with others to build products that connect with people in a meaningful way.
                   </p>
                 </div>
@@ -146,7 +146,7 @@ export default function Home() {
             <p className="text-sm uppercase tracking-wider text-neutral-600 mb-4">
               Like What You See?
             </p>
-            <h2 className="text-6xl md:text-8xl font-bold mb-12">Let's Connect!</h2>
+            <h2 className="text-6xl md:text-8xl font-bold mb-12">Let&apos;s Connect!</h2>
             
             <div className="flex flex-wrap justify-center gap-6 mb-8">
               <Link 
