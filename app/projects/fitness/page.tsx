@@ -31,7 +31,7 @@ export default function FitnessPage() {
               </p>
               <p>
                 Most apps front-load complexity: calorie counters, macro splits, VO2 max estimates.
-                Users who just want to "get in shape" are lost before they finish signing up.
+                Users who just want to &ldquo;get in shape&rdquo; are lost before they finish signing up.
               </p>
             </>
           ),
